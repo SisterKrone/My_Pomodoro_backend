@@ -1,4 +1,3 @@
-// src/controllers/pomodoroController.js
 const pomodoroService = require("../services/pomodoroService");
 
 exports.startPomodoro = async (req, res) => {

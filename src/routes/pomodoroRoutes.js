@@ -1,4 +1,3 @@
-// src/routes/pomodoroRoutes.js
 const express = require("express");
 const router = express.Router();
 const pomodoroController = require("../controllers/pomodoroController");

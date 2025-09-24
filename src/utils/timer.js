@@ -1,4 +1,3 @@
-// src/utils/timer.js
 let timeoutId = null;
 
 function toDateAfterMinutes(minutes) {
@@ -6,7 +5,7 @@ function toDateAfterMinutes(minutes) {
 }
 
 function start(session, onUpdate) {
-  console.log(`⏳ Sessão iniciada: ${session.studyTime} minutos de estudo.`);
+  console.log(`Sessão iniciada: ${session.studyTime} minutos de estudo.`);
 
   let s = {
     id: session.id,
@@ -33,9 +32,9 @@ function start(session, onUpdate) {
         s.status = "finished";
         s.periodEndsAt = null;
         s.isCompleted = true;
-        if (onUpdate) await onUpdate(s, true); // <--- avisa service que acabou
+        if (onUpdate) await onUpdate(s, true); 
         timeoutId = null;
-        console.log("🎉 Sessão completa!");
+        console.log("Sessão completa!");
         return;
       } else {
         s.status = "studying";
@@ -59,7 +58,7 @@ function stop() {
     clearTimeout(timeoutId);
     timeoutId = null;
   }
-  console.log("🛑 Sessão interrompida.");
+  console.log("Sessão interrompida.");
 }
 
 module.exports = { start, stop };

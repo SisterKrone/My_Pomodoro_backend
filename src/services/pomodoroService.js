@@ -1,4 +1,3 @@
-// src/services/pomodoroService.js
 const { PrismaClient } = require("@prisma/client");
 const prisma = new PrismaClient();
 const timer = require("../utils/timer");
@@ -39,7 +38,6 @@ exports.start = async (studyTime, breakTime, cycles) => {
       },
     });
 
-    // se acabou, limpa activeSession
     if (isFinished) {
       activeSession = null;
     }
